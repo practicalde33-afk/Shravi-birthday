@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Birthday Treat, Shravi! 🎁</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Sacramento&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/treat.css">
+</head>
+<body class="page-treat">
+    <canvas id="particleCanvas"></canvas>
+    <canvas id="confettiCanvas"></canvas>
+    <div class="floating-elements" id="floatingElements"></div>
+    <div class="page-transition" id="pageTransition">
+        <div class="transition-heart">💖</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="cute-nav">
+        <a href="index.html" class="nav-link">🏠 Home</a>
+        <a href="gallery.html" class="nav-link">📸 Gallery</a>
+        <a href="letter.html" class="nav-link">💌 Letter</a>
+        <a href="treat.html" class="nav-link active">🎁 Treat</a>
+    </nav>
+
+    <main class="treat-page">
+        <div class="page-header">
+            <div class="header-decoration">
+                <span class="deco-float" style="--d:0">🎁</span>
+                <span class="deco-float" style="--d:1">🎀</span>
+                <span class="deco-float" style="--d:2">🎉</span>
+            </div>
+            <h1 class="page-title reveal-text">Your Birthday Treat!</h1>
+            <p class="page-subtitle reveal-fade">Because you deserve to be pampered — pick your treat! 🎀</p>
+            <div class="title-underline"></div>
+        </div>
+
+        <!-- Treat Info Cards -->
+        <div class="treat-info-grid">
+            <div class="info-card" data-delay="0">
+                <div class="info-card-glow"></div>
+                <div class="info-icon-wrap">
+                    <span class="info-icon">📅</span>
+                </div>
+                <h4>Date</h4>
+                <p>You pick the day!</p>
+                <span class="info-badge">Your choice 🎉</span>
+            </div>
+            <div class="info-card" data-delay="1">
+                <div class="info-card-glow"></div>
+                <div class="info-icon-wrap">
+                    <span class="info-icon">⏰</span>
+                </div>
+                <h4>Time</h4>
+                <p>Whenever you say!</p>
+                <span class="info-badge">Your call 💅</span>
+            </div>
+            <div class="info-card" data-delay="2">
+                <div class="info-card-glow"></div>
+                <div class="info-icon-wrap">
+                    <span class="info-icon">📍</span>
+                </div>
+                <h4>Where</h4>
+                <p>Your choice, my treat!</p>
+                <span class="info-badge">Anywhere 💝</span>
+            </div>
+            <div class="info-card" data-delay="3">
+                <div class="info-card-glow"></div>
+                <div class="info-icon-wrap">
+                    <span class="info-icon">💰</span>
+                </div>
+                <h4>Budget</h4>
+                <p>Don't even think about it</p>
+                <span class="info-badge">It's on me! 🤗</span>
+            </div>
+        </div>
+
+        <!-- Choice Form -->
+        <div class="choice-section">
+            <div class="choice-card-main">
+                <div class="choice-header">
+                    <span class="choice-header-emoji">🎯</span>
+                    <h2>Pick Your Birthday Plan!</h2>
+                    <p>What sounds fun to you? Choose one or more!</p>
+                </div>
+
+                <form id="treatForm" action="https://formspree.io/f/xjyglqoy" method="POST">
+                    <!-- Hidden field for subject -->
+                    <input type="hidden" name="_subject" value="🎂 Shravi picked her Birthday Treat!">
+                    <input type="hidden" name="_template" value="table">
+                    
+                    <div class="choice-grid">
+                        <label class="treat-option" for="opt-dinner">
+                            <input type="checkbox" id="opt-dinner" name="choice[]" value="Dinner at a fancy restaurant 🍽️">
+                            <div class="option-card">
+                                <div class="option-emoji-wrap">
+                                    <span class="option-emoji">🍽️</span>
+                                    <div class="option-glow"></div>
+                                </div>
+                                <h3>Fancy Dinner</h3>
+                                <p>A beautiful dinner at a fancy restaurant</p>
+                                <div class="option-check">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <div class="option-confetti">
+                                    <span>🎉</span><span>✨</span><span>💖</span><span>🎊</span>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="treat-option" for="opt-movie">
+                            <input type="checkbox" id="opt-movie" name="choice[]" value="Movie night 🎬">
+                            <div class="option-card">
+                                <div class="option-emoji-wrap">
+                                    <span class="option-emoji">🎬</span>
+                                    <div class="option-glow"></div>
+                                </div>
+                                <h3>Movie Night</h3>
+                                <p>Popcorn, snacks & a blockbuster movie</p>
+                                <div class="option-check">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <div class="option-confetti">
+                                    <span>🎉</span><span>✨</span><span>💖</span><span>🎊</span>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="treat-option" for="opt-cafe">
+                            <input type="checkbox" id="opt-cafe" name="choice[]" value="Café hangout ☕">
+                            <div class="option-card">
+                                <div class="option-emoji-wrap">
+                                    <span class="option-emoji">☕</span>
+                                    <div class="option-glow"></div>
+                                </div>
+                                <h3>Café Hangout</h3>
+                                <p>Cozy vibes, coffee & heart-to-heart talks</p>
+                                <div class="option-check">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <div class="option-confetti">
+                                    <span>🎉</span><span>✨</span><span>💖</span><span>🎊</span>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="treat-option" for="opt-shopping">
+                            <input type="checkbox" id="opt-shopping" name="choice[]" value="Shopping spree 🛍️">
+                            <div class="option-card">
+                                <div class="option-emoji-wrap">
+                                    <span class="option-emoji">🛍️</span>
+                                    <div class="option-glow"></div>
+                                </div>
+                                <h3>Shopping Spree</h3>
+                                <p>A full-on shopping adventure, on me!</p>
+                                <div class="option-check">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <div class="option-confetti">
+                                    <span>🎉</span><span>✨</span><span>💖</span><span>🎊</span>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="form-extras">
+                        <div class="form-group">
+                            <label for="customMsg">
+                                <span class="form-label-icon">💬</span>
+                                Or tell me what you'd love to do!
+                            </label>
+                            <textarea id="customMsg" name="custom_message" placeholder="Anything you want, birthday girl! Write it here... 🌟" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group form-group-half">
+                                <label for="preferredDate">
+                                    <span class="form-label-icon">📅</span>
+                                    Pick a date!
+                                </label>
+                                <input type="date" id="preferredDate" name="preferred_date">
+                            </div>
+
+                            <div class="form-group form-group-half">
+                                <label for="preferredTime">
+                                    <span class="form-label-icon">⏰</span>
+                                    Pick a time!
+                                </label>
+                                <input type="time" id="preferredTime" name="preferred_time">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span class="submit-bg"></span>
+                        <span class="submit-content">
+                            <span class="submit-text" id="btnText">Send My Choice! 🎉</span>
+                            <span class="submit-loading" id="btnLoading" style="display:none;">
+                                <span class="loading-dots">
+                                    <span>.</span><span>.</span><span>.</span>
+                                </span>
+                                Sending 💌
+                            </span>
+                        </span>
+                    </button>
+                </form>
+
+                <!-- Success State -->
+                <div class="success-state" id="successState" style="display:none;">
+                    <div class="success-animation">
+                        <div class="success-circle">
+                            <svg class="success-check" viewBox="0 0 52 52">
+                                <circle cx="26" cy="26" r="25" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <path fill="none" stroke="currentColor" stroke-width="3" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <h2 class="success-title">Yayyy! Got it! 🥳</h2>
+                    <p class="success-text">Priyanshu has been notified about your choice!</p>
+                    <p class="success-subtext">Get ready for an amazing time, birthday girl! 💃✨</p>
+                    <div class="success-emojis">
+                        <span style="--i:0">🎉</span>
+                        <span style="--i:1">🎈</span>
+                        <span style="--i:2">🎊</span>
+                        <span style="--i:3">🎁</span>
+                        <span style="--i:4">🎀</span>
+                        <span style="--i:5">🥳</span>
+                    </div>
+                    <a href="index.html" class="back-home-btn">
+                        <span>Back to Home 🏠</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="cute-footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,40 C360,100 720,0 1080,50 C1260,75 1380,40 1440,60 L1440,100 L0,100 Z" fill="currentColor"/>
+            </svg>
+        </div>
+        <div class="footer-content">
+            <div class="footer-hearts">💕💖💕</div>
+            <p class="footer-text">Made with all the love in the world</p>
+            <p class="footer-by">For <span>Shravi</span> 🎂 From <span>Priyanshu</span></p>
+            <p class="footer-year">© 2026 — Because best friends deserve the best 🌟</p>
+        </div>
+    </footer>
+
+    <button class="music-toggle" id="musicToggle" title="Play Birthday Song 🎵">
+        <span class="music-icon">🎵</span>
+        <span class="music-waves"><span></span><span></span><span></span></span>
+    </button>
+
+    <script src="js/common.js"></script>
+    <script src="js/treat.js"></script>
+</body>
+</html>

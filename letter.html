@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Letter For You, Shravi 💌</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Sacramento&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/letter.css">
+</head>
+<body class="page-letter">
+    <canvas id="particleCanvas"></canvas>
+    <div class="floating-elements" id="floatingElements"></div>
+    <div class="page-transition" id="pageTransition">
+        <div class="transition-heart">💖</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="cute-nav">
+        <a href="index.html" class="nav-link">🏠 Home</a>
+        <a href="gallery.html" class="nav-link">📸 Gallery</a>
+        <a href="letter.html" class="nav-link active">💌 Letter</a>
+        <a href="treat.html" class="nav-link">🎁 Treat</a>
+    </nav>
+
+    <main class="letter-page">
+        <div class="page-header">
+            <div class="header-decoration">
+                <span class="deco-float" style="--d:0">💌</span>
+                <span class="deco-float" style="--d:1">💕</span>
+                <span class="deco-float" style="--d:2">🌸</span>
+            </div>
+            <h1 class="page-title reveal-text">A Letter For You</h1>
+            <p class="page-subtitle reveal-fade">From the heart of your bestie 💗</p>
+            <div class="title-underline"></div>
+        </div>
+
+        <!-- Envelope Animation -->
+        <div class="envelope-container" id="envelopeContainer">
+            <div class="envelope" id="envelope">
+                <div class="envelope-flap"></div>
+                <div class="envelope-body">
+                    <div class="envelope-front">
+                        <p class="envelope-to">To: Shravi 💕</p>
+                        <p class="envelope-from">From: Your Best Friend</p>
+                        <div class="envelope-stamp">
+                            <span>💖</span>
+                        </div>
+                        <div class="envelope-seal">✉️</div>
+                    </div>
+                </div>
+            </div>
+            <button class="open-letter-btn" id="openLetterBtn">
+                <span>Tap to Open 💌</span>
+            </button>
+        </div>
+
+        <!-- The Letter -->
+        <div class="letter-container" id="letterContainer" style="display:none;">
+            <div class="letter-paper">
+                <div class="paper-texture"></div>
+                <div class="letter-pin">📌</div>
+                <div class="letter-flower-tl">🌸</div>
+                <div class="letter-flower-br">🌺</div>
+                
+                <div class="letter-top-border"></div>
+                
+                <div class="letter-date">
+                    <span class="date-icon">📅</span>
+                    October 18, 2026
+                </div>
+
+                <div class="letter-body">
+                    <p class="letter-greeting letter-line" data-line="0">Dear Shravi,</p>
+                    
+                    <p class="letter-line" data-line="1">
+                        Happy Birthday to the most <span class="highlight">incredible, beautiful, and amazing</span> person I know! 🎉
+                    </p>
+                    
+                    <p class="letter-line" data-line="2">
+                        You know, some people come into your life and you just know they're going to be there forever. That's exactly what happened when I found you — my <span class="highlight">best friend</span>, my partner in crime, my go-to person for literally everything. 💛
+                    </p>
+                    
+                    <p class="letter-line" data-line="3">
+                        From our endless conversations that go on till 3 AM 🌙 to our random food cravings that turn into full adventures 🍕, from laughing so hard our stomachs hurt 😂 to being there for each other through every high and low — you've made my life so much more <span class="highlight">colorful and meaningful</span>.
+                    </p>
+                    
+                    <p class="letter-line" data-line="4">
+                        You're not just a friend, Shravi. You're the kind of person who makes everyone around her feel <span class="highlight">special and loved</span>. Your smile literally lights up the room ✨, your laughter is contagious, and your heart? Purest thing in this entire world. 💎
+                    </p>
+                    
+                    <p class="letter-line" data-line="5">
+                        On your special day, I want you to know that I'm so <span class="highlight">grateful</span> to have you in my life. You deserve all the happiness, all the love, and all the good things this world has to offer. May this year bring you everything you've been wishing for — and more! 🌈
+                    </p>
+                    
+                    <p class="letter-line" data-line="6">
+                        Here's to more memories, more laughter, more late-night talks, and more moments that we'll look back on and smile. 📸
+                    </p>
+                    
+                    <p class="letter-line letter-closing" data-line="7">
+                        Happy Birthday once again, beautiful soul! Never change. Never stop being the amazing person you are. 🦋
+                    </p>
+                    
+                    <div class="letter-signature letter-line" data-line="8">
+                        <p class="sig-text">With all the love in the world,</p>
+                        <p class="sig-name">Your Best Friend,</p>
+                        <p class="sig-author">Priyanshu</p>
+                        <span class="sig-heart">💕</span>
+                    </div>
+                </div>
+
+                <div class="letter-seal-stamp">
+                    <div class="seal-outer">
+                        <div class="seal-inner">BFF</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Next Page CTA -->
+        <div class="next-page-cta" id="nextCta" style="display:none;">
+            <p class="cta-text">One more surprise waiting for you...</p>
+            <a href="treat.html" class="magic-btn">
+                <span class="btn-bg"></span>
+                <span class="btn-content">
+                    <span class="btn-text">Your Birthday Treat!</span>
+                    <span class="btn-icon">🎁</span>
+                </span>
+                <span class="btn-sparkle btn-sparkle-1">✦</span>
+                <span class="btn-sparkle btn-sparkle-2">✦</span>
+                <span class="btn-sparkle btn-sparkle-3">✦</span>
+                <span class="btn-sparkle btn-sparkle-4">✦</span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Floating Next Button -->
+    <a href="treat.html" class="floating-next-btn" id="floatingNextBtn" title="Next: Birthday Treat 🎁">
+        <span>Birthday Treat 🎁</span>
+        <span class="next-arrow">→</span>
+    </a>
+
+    <button class="music-toggle" id="musicToggle" title="Play Birthday Song 🎵">
+        <span class="music-icon">🎵</span>
+        <span class="music-waves"><span></span><span></span><span></span></span>
+    </button>
+
+    <script src="js/common.js"></script>
+    <script src="js/letter.js"></script>
+</body>
+</html>

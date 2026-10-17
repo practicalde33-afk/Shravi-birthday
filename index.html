@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Shravi! 🎂✨</title>
+    <meta name="description" content="A special birthday wish for the most amazing best friend - Shravi!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Sacramento&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/hero.css">
+</head>
+<body class="page-hero">
+    <!-- Particle Canvas -->
+    <canvas id="particleCanvas"></canvas>
+    
+    <!-- Confetti Canvas -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- Floating Elements -->
+    <div class="floating-elements" id="floatingElements"></div>
+
+    <!-- Page Transition Overlay -->
+    <div class="page-transition" id="pageTransition">
+        <div class="transition-heart">💖</div>
+    </div>
+
+    <!-- Cute Navigation Bar -->
+    <nav class="cute-nav">
+        <a href="index.html" class="nav-link active" data-page="home">🏠 Home</a>
+        <a href="gallery.html" class="nav-link" data-page="gallery">📸 Gallery</a>
+        <a href="letter.html" class="nav-link" data-page="letter">💌 Letter</a>
+        <a href="treat.html" class="nav-link" data-page="treat">🎁 Treat</a>
+    </nav>
+
+    <!-- Curtain Reveal -->
+    <div class="curtain" id="curtain">
+        <div class="curtain-left"></div>
+        <div class="curtain-right"></div>
+        <div class="curtain-text">
+            <span class="curtain-emoji">🎂</span>
+            <p>A Special Day...</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="hero-page">
+        <!-- Stars / Twinkle Background -->
+        <div class="twinkle-bg" id="twinkleBg"></div>
+
+        <div class="hero-wrapper">
+            <div class="hero-glow"></div>
+            <div class="hero-glow hero-glow-2"></div>
+
+            <div class="hero-content">
+                <!-- Sparkle Ring with Birthday Cake inside -->
+                <div class="sparkle-ring">
+                    <div class="cake-bounce">🎂</div>
+                    <span class="ring-particle" style="--i:0">✨</span>
+                    <span class="ring-particle" style="--i:1">🌸</span>
+                    <span class="ring-particle" style="--i:2">💖</span>
+                    <span class="ring-particle" style="--i:3">🦋</span>
+                    <span class="ring-particle" style="--i:4">🌺</span>
+                    <span class="ring-particle" style="--i:5">💫</span>
+                    <span class="ring-particle" style="--i:6">🎀</span>
+                    <span class="ring-particle" style="--i:7">🌷</span>
+                </div>
+
+                <p class="hero-pre-text" id="typewriter"></p>
+                
+                <h1 class="hero-title">
+                    <span class="title-line">Happy Birthday</span>
+                </h1>
+                
+                <h2 class="hero-name">
+                    <span class="name-letter" style="--i:0">S</span>
+                    <span class="name-letter" style="--i:1">h</span>
+                    <span class="name-letter" style="--i:2">r</span>
+                    <span class="name-letter" style="--i:3">a</span>
+                    <span class="name-letter" style="--i:4">v</span>
+                    <span class="name-letter" style="--i:5">i</span>
+                    <span class="name-letter" style="--i:6">💕</span>
+                </h2>
+
+                <p class="hero-tagline">
+                    <span class="tag-word" style="--d:0">My</span>
+                    <span class="tag-word" style="--d:1">Best</span>
+                    <span class="tag-word" style="--d:2">Friend</span>
+                    <span class="tag-word" style="--d:3">Forever</span>
+                    <span class="tag-word tag-heart" style="--d:4">💖</span>
+                </p>
+
+                <div class="hero-cta">
+                    <a href="gallery.html" class="magic-btn" id="openGiftBtn">
+                        <span class="btn-bg"></span>
+                        <span class="btn-content">
+                            <span class="btn-text">Open Your Gift</span>
+                            <span class="btn-icon">🎁</span>
+                        </span>
+                        <span class="btn-sparkle btn-sparkle-1">✦</span>
+                        <span class="btn-sparkle btn-sparkle-2">✦</span>
+                        <span class="btn-sparkle btn-sparkle-3">✦</span>
+                        <span class="btn-sparkle btn-sparkle-4">✦</span>
+                    </a>
+                </div>
+
+                <p class="click-hint">✨ Click the gift above or tap below to start your surprise! 📸 ✨</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating Next Button -->
+    <a href="gallery.html" class="floating-next-btn" id="floatingNextBtn" title="Next: Photo Gallery 📸">
+        <span>Go to Gallery 📸</span>
+        <span class="next-arrow">→</span>
+    </a>
+
+    <!-- Music Toggle -->
+    <button class="music-toggle" id="musicToggle" title="Play Birthday Song 🎵">
+        <span class="music-icon">🎵</span>
+        <span class="music-waves">
+            <span></span><span></span><span></span>
+        </span>
+    </button>
+
+    <script src="js/common.js"></script>
+    <script src="js/hero.js"></script>
+</body>
+</html>
